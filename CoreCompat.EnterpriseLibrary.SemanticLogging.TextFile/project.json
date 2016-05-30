@@ -1,0 +1,47 @@
+{
+
+  "version": "6.0.1304-*",
+
+  "authors": [ "Microsoft" ],
+  "title": "Semantic Logging Application Block - Text file sink for .NET Core",
+  "description": "The Semantic Logging Application Block provides a set of destinations to persist events published by a subclass of EventSource, This add-on packages adds support to persisting log entries into rolling text files and simple text files.",
+
+  "packOptions": {
+    "licenseUrl": "https://github.com/CoreCompat/semantic-logging/blob/master/LICENSE.txt",
+    "owners": [ "quamotion" ],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/CoreCompat/semantic-logging/"
+    }
+  },
+
+  "dependencies": {
+    "CoreCompat.EnterpriseLibrary.SemanticLogging": "6.0.1304-r2"
+  },
+
+  "buildOptions": {
+    "keyFile": "../CoreCompat.EnterpriseLibrary.Common.snk",
+    "strongName": true,
+    "compile": {
+      "include": [
+        "../Source/Src/SemanticLogging.TextFile/**/*.cs",
+        "../Source/Src/GlobalAssemblyInfo.cs"
+      ]
+    }
+  },
+
+  "frameworks": {
+    "netstandard1.5": {
+      "dependencies": {
+        "NETStandard.Library": "1.5.0-rc2-24027"
+      },
+      "buildOptions": {
+        "define": [ "CORECLR", "SIGN" ]
+      }
+    }
+  },
+
+  "runtimes": {
+    "win7-x64": { }
+  }
+}

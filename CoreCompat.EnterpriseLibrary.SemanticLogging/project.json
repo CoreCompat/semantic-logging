@@ -3,7 +3,7 @@
   "version": "6.0.1304-*",
 
   "authors": [ "Microsoft" ],
-  "title": "Enterprise Library - Logging Application Block for .NET Core",
+  "title": "Enterprise Library - Semantic Logging Application Block for .NET Core",
   "description": "The Enterprise Library Logging Application Block simplifies logging to various destinations (file, database, event log, MSMQ etc.) and tracing.",
 
   "packOptions": {
@@ -24,7 +24,8 @@
     "strongName": true,
     "compile": {
       "include": [
-        "../Source/Src/SemanticLogging/**/*.cs"
+        "../Source/Src/SemanticLogging/**/*.cs",
+        "../Source/Src/GlobalAssemblyInfo.cs"
       ]
     }
   },
