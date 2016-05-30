@@ -40,6 +40,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks
         {
         }
 
+#if !CORECLR
         /// <summary>Initializes a new instance of the System.Exception class with serialized data.</summary>
         /// <param name="info">The SerializationInfo that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The StreamingContext that contains contextual information about the source or destination.</param>
@@ -47,5 +48,6 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks
             : base(info, context) 
         {
         }
+#endif
     }
 }
