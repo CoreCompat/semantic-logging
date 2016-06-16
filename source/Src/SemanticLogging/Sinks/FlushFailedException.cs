@@ -9,7 +9,9 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks
     /// <summary>
     /// Represents an error while doing a flush operation.
     /// </summary>
+#if !CORECLR
     [Serializable]
+#endif
     public class FlushFailedException : Exception
     {
         /// <summary>Initializes a new instance of the <see cref="FlushFailedException" /> class.</summary>
