@@ -42,7 +42,9 @@
         "System.ComponentModel.TypeConverter": "4.1.0",
         "System.Threading.Tasks.Parallel": "4.0.1",
         "System.Diagnostics.Tools": "4.0.1",
-        "System.Console": "4.0.0"
+        "System.Console": "4.0.0",
+        "System.Diagnostics.Process": "4.1.0",
+        "System.Threading.Thread": "4.0.0"
       },
       "buildOptions": {
         "define": [ "CORECLR", "SIGN" ]

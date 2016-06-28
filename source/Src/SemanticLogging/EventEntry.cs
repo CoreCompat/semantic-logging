@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Diagnostics.Tracing;
 using System.Globalization;
@@ -10,6 +11,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security;
+using System.Threading;
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Schema;
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility;
 
@@ -326,7 +328,11 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging
             {
                 try
                 {
+#if !CORECLR
                     return SafeNativeMethods.GetCurrentProcessId();
+#else
+                    return Process.GetCurrentProcess().Id;
+#endif
                 }
                 catch (SecurityException)
                 {
@@ -339,7 +345,11 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging
             {
                 try
                 {
+#if !CORECLR
                     return SafeNativeMethods.GetCurrentThreadId();
+#else
+                    return Thread.CurrentThread.ManagedThreadId;
+#endif
                 }
                 catch (SecurityException)
                 {
